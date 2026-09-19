@@ -433,10 +433,10 @@ export const STUDENT_DIRECTORY: Record<string, StudentDetail> = {
     rollNo: 'RES-HARSH-B004',
     phone: '+91 8809900560',
     email: 'upadhyayharshpritam@gmail.com',
-    guardian: 'Pritam Upadhyay (Father)',
+    guardian: 'XYZ (Father)',
     guardianPhone: '+91 98011 23456',
     bloodGroup: 'B+',
-    homeCity: 'Patna, Bihar',
+    homeCity: 'Bokaro, Jharkhand',
   },
   'Aarav Sharma': {
     id: 'STU-2023-019',
