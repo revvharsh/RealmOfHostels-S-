@@ -174,68 +174,56 @@ export const CURRENT_FEE_NOTICE: FeeNoticeItem = {
   authorizedBy: 'Prof. B.K. Singhal (Accounts Officer, Hostel Finance Cell)',
 };
 
-// Mess Menu categorized strictly into VEG and NON-VEG ONLY
-export const MESS_MENU_DATA: Record<
-  'Breakfast' | 'Lunch' | 'Snacks' | 'Dinner',
-  {
-    timing: string;
-    description: string;
-    dishes: MealDish[];
-  }
-> = {
-  Breakfast: {
-    timing: '07:30 AM - 09:00 AM',
-    description: 'Morning fueling station with live tawa and hot counter',
-    dishes: [
-      { name: 'Stuffed Aloo & Paneer Paratha with Butter', category: 'Hot Griddle', type: 'Veg' },
-      { name: 'Fresh Mint Dahi & Mixed Lemon Pickle', category: 'Accompaniment', type: 'Veg' },
-      { name: 'Steamed Indori Poha with Roasted Peanuts & Sev', category: 'Traditional', type: 'Veg' },
-      { name: 'Double Egg Masala Omelette with Buttered Toast', category: 'Live Station', type: 'Non-Veg' },
-      { name: 'Hard Boiled Farm Eggs (2 Pcs) with Crushed Pepper', category: 'High Protein', type: 'Non-Veg' },
-      { name: 'Toasted Multi-Grain Bread with Butter & Mixed Fruit Jam', category: 'Continental', type: 'Veg' },
-      { name: 'Fresh Seasonal Banana & Papaya Bowls', category: 'Fruits', type: 'Veg' },
-      { name: 'Kadak Masala Chai & South Indian Filter Coffee', category: 'Beverage', type: 'Veg' },
-    ],
+// Menu timings are shared by the live dining clock; every course below comes from the supplied weekly chart.
+export const MESS_MENU_DATA: Record<'Breakfast' | 'Lunch' | 'Snacks' | 'Dinner', { timing: string }> = {
+  Breakfast: { timing: '07:30 AM - 09:00 AM' },
+  Lunch: { timing: '12:10 PM - 01:30 PM' },
+  Snacks: { timing: '05:00 PM - 06:00 PM' },
+  Dinner: { timing: '08:00 PM - 09:00 PM' },
+};
+
+export const WEEKLY_MESS_COURSES: Record<string, Record<'Breakfast' | 'Lunch' | 'Snacks' | 'Dinner', { timing: string; description: string; dishes: MealDish[] }>> = {
+  Monday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Aloo puri breakfast with sabji and tea', dishes: [{ name: 'Aloo Puri', category: 'Main Course', type: 'Veg' }, { name: 'Sabji', category: 'Accompaniment', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Dal, seasonal vegetable, rice, breads, pickle and salad', dishes: [{ name: 'Arhar Dal', category: 'Lentils', type: 'Veg' }, { name: 'Parwal Do Pyaza', category: 'Main Course', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Fresh samosa and Rasna', dishes: [{ name: 'Samosa', category: 'Snack', type: 'Veg' }, { name: 'Rasna', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Dal, vegetable curry, kofta, roti, salad and pickle', dishes: [{ name: 'Chana Dal', category: 'Lentils', type: 'Veg' }, { name: 'Aloo Gobhi', category: 'Main Course', type: 'Veg' }, { name: 'Kofta', category: 'Main Course', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }] },
   },
-  Lunch: {
-    timing: '12:10 PM - 01:30 PM',
-    description: 'Full royal buffet with curries, lentils, rice, breads & dessert',
-    dishes: [
-      { name: 'Paneer Butter Masala (Rich Cashew Tomato Gravy)', category: 'Main Gravy', type: 'Veg' },
-      { name: 'Desi Ghee Dal Tadka (Double Tempered Yellow Lentils)', category: 'Lentils', type: 'Veg' },
-      { name: 'Homestyle Murgh Curry (Fresh Chicken Stew - Wed/Sun)', category: 'Poultry', type: 'Non-Veg' },
-      { name: 'Dhaba-Style Egg Curry (Spiced Onion Tomato Gravy)', category: 'Egg Station', type: 'Non-Veg' },
-      { name: 'Jeera Basmati Long Grain Rice', category: 'Rice', type: 'Veg' },
-      { name: 'Tandoori Roti & Butter Phulka', category: 'Breads', type: 'Veg' },
-      { name: 'Boondi Mint Raita (Chilled Spiced Yogurt)', category: 'Yogurt', type: 'Veg' },
-      { name: 'Fresh Green Salad (Cucumber, Beetroot, Onion, Lemon)', category: 'Salad', type: 'Veg' },
-      { name: 'Hot Desi Ghee Gulab Jamun (2 Pcs)', category: 'Dessert', type: 'Veg' },
-    ],
+  Tuesday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Sambar, upma, chutney and tea', dishes: [{ name: 'Sambar', category: 'Accompaniment', type: 'Veg' }, { name: 'Upma', category: 'Main Course', type: 'Veg' }, { name: 'Chutney', category: 'Accompaniment', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Rajma, aloo matar, rice, roti, pickle and salad', dishes: [{ name: 'Rajma', category: 'Lentils', type: 'Veg' }, { name: 'Aloo Matar', category: 'Main Course', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Poha or macaroni with tea', dishes: [{ name: 'Poha/Macaroni', category: 'Snack', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Puri chola, kaddu ki sabji, kheer, rice, roti, pickle and salad', dishes: [{ name: 'Puri Chola', category: 'Main Course', type: 'Veg' }, { name: 'Kaddu Ki Sabji', category: 'Main Course', type: 'Veg' }, { name: 'Kheer', category: 'Dessert', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
   },
-  Snacks: {
-    timing: '05:00 PM - 06:00 PM',
-    description: 'Evening tea-time refreshments and crisp station',
-    dishes: [
-      { name: 'Crispy Punjabi Samosa with Mint & Tamarind Chutneys', category: 'Frying Station', type: 'Veg' },
-      { name: 'Kolkata Style Double Egg Kathi Roll', category: 'Live Roll Counter', type: 'Non-Veg' },
-      { name: 'Roasted Salted Makhana & Spiced Peanuts', category: 'Healthy Snack', type: 'Veg' },
-      { name: 'Fresh Ginger Cardamom Cutting Chai', category: 'Hot Beverage', type: 'Veg' },
-      { name: 'Filter Coffee & Cold Bournvita', category: 'Beverage', type: 'Veg' },
-    ],
+  Wednesday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Aloo paratha, dahi and tea', dishes: [{ name: 'Aloo Paratha', category: 'Main Course', type: 'Veg' }, { name: 'Dahi', category: 'Accompaniment', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Kadai paneer, kali masoor dal, rice, roti, pickle and salad', dishes: [{ name: 'Kadai Paneer', category: 'Main Course', type: 'Veg' }, { name: 'Kali Masoor Dal', category: 'Lentils', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Aloo bread sandwich and Rasna', dishes: [{ name: 'Aloo Bread Sandwich', category: 'Snack', type: 'Veg' }, { name: 'Rasna', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Egg curry or malai kofta with rice, roti, salad and gulab jamun', dishes: [{ name: 'Egg Curry', category: 'Egg Course', type: 'Non-Veg' }, { name: 'Malai Kofta', category: 'Main Course', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }, { name: 'Gulab Jamun', category: 'Dessert', type: 'Veg' }] },
   },
-  Dinner: {
-    timing: '08:00 PM - 09:00 PM',
-    description: 'Wholesome evening dining with protein selection and dessert',
-    dishes: [
-      { name: 'Kadai Paneer Mushroom Melange', category: 'Main Gravy', type: 'Veg' },
-      { name: 'Dal Makhani (Slow-Cooked Overnight with White Butter)', category: 'Lentils', type: 'Veg' },
-      { name: 'Chicken Tikka Masala / Kadhai Chicken (Daily Alternate)', category: 'Poultry', type: 'Non-Veg' },
-      { name: 'Spicy Egg Bhurji with Diced Onions & Coriander', category: 'Egg Station', type: 'Non-Veg' },
-      { name: 'Steamed Rice & Veg Green Peas Pulao', category: 'Rice', type: 'Veg' },
-      { name: 'Fresh Tawa Butter Roti', category: 'Breads', type: 'Veg' },
-      { name: 'Sprouted Moong & Corn Salad', category: 'Salad', type: 'Veg' },
-      { name: 'Royal Kesar Pista Kulfi / Vanilla Scoop', category: 'Dessert', type: 'Veg' },
-    ],
+  Thursday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Bread, butter, jam, banana and tea', dishes: [{ name: 'Bread', category: 'Main Course', type: 'Veg' }, { name: 'Butter', category: 'Accompaniment', type: 'Veg' }, { name: 'Jam', category: 'Accompaniment', type: 'Veg' }, { name: 'Banana', category: 'Fruit', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Mixed vegetable sabzi, Punjabi dal tadka, rice, roti and salad', dishes: [{ name: 'Mix Vegetable Sabzi', category: 'Main Course', type: 'Veg' }, { name: 'Punjabi Dal Tadka', category: 'Lentils', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Chow mein and tea', dishes: [{ name: 'Chow Mein', category: 'Snack', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Dal makhani, patta gobhi aloo, seasonal sabzi, roti, salad and gulab jamun', dishes: [{ name: 'Dal Makhani', category: 'Lentils', type: 'Veg' }, { name: 'Patta Gobhi Aloo', category: 'Main Course', type: 'Veg' }, { name: 'Seasonal Sabzi', category: 'Main Course', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }, { name: 'Gulab Jamun', category: 'Dessert', type: 'Veg' }] },
+  },
+  Friday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Pav bhaji or chole kulcha with tea', dishes: [{ name: 'Pav Bhaji', category: 'Main Course', type: 'Veg' }, { name: 'Chole Kulcha', category: 'Main Course', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Mixed vegetable sabzi, Punjabi dal, rice, roti, pickle and salad', dishes: [{ name: 'Mix Vegetable Sabzi', category: 'Main Course', type: 'Veg' }, { name: 'Punjabi Dal', category: 'Lentils', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Aloo tikki burger or vegetable burger with tea', dishes: [{ name: 'Aloo Tikki Burger', category: 'Snack', type: 'Veg' }, { name: 'Vegetable Burger', category: 'Snack', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Chilli paneer, veg Manchurian, fried rice, roti and salad', dishes: [{ name: 'Chilli Paneer', category: 'Main Course', type: 'Veg' }, { name: 'Veg Manchurian', category: 'Main Course', type: 'Veg' }, { name: 'Fried Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+  },
+  Saturday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Kala chana, plain paratha and tea', dishes: [{ name: 'Kala Chana', category: 'Main Course', type: 'Veg' }, { name: 'Plain Paratha', category: 'Bread', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Vegetable biryani, chutney, raita, papad and salad', dishes: [{ name: 'Vegetable Biryani', category: 'Rice', type: 'Veg' }, { name: 'Chutney', category: 'Accompaniment', type: 'Veg' }, { name: 'Raita', category: 'Accompaniment', type: 'Veg' }, { name: 'Papad', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Dahi bhalla and Rasna', dishes: [{ name: 'Dahi Bhalla', category: 'Snack', type: 'Veg' }, { name: 'Rasna', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Dal, rice, roti, chana, custard, salad and pickle', dishes: [{ name: 'Dal', category: 'Lentils', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Chana', category: 'Main Course', type: 'Veg' }, { name: 'Custard', category: 'Dessert', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }] },
+  },
+  Sunday: {
+    Breakfast: { ...MESS_MENU_DATA.Breakfast, description: 'Paneer paratha and tea', dishes: [{ name: 'Paneer Paratha', category: 'Main Course', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Lunch: { ...MESS_MENU_DATA.Lunch, description: 'Chole bhature, rice, raita, pickle and salad', dishes: [{ name: 'Chole Bhature', category: 'Main Course', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Raita', category: 'Accompaniment', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }] },
+    Snacks: { ...MESS_MENU_DATA.Snacks, description: 'Aloo patties and tea', dishes: [{ name: 'Aloo Patties', category: 'Snack', type: 'Veg' }, { name: 'Tea', category: 'Beverage', type: 'Veg' }] },
+    Dinner: { ...MESS_MENU_DATA.Dinner, description: 'Chicken curry, paneer do pyaza, rice, roti, salad and pickle', dishes: [{ name: 'Chicken Curry', category: 'Main Course', type: 'Non-Veg' }, { name: 'Paneer Do Pyaza', category: 'Main Course', type: 'Veg' }, { name: 'Rice', category: 'Rice', type: 'Veg' }, { name: 'Roti', category: 'Bread', type: 'Veg' }, { name: 'Salad', category: 'Salad', type: 'Veg' }, { name: 'Pickle', category: 'Accompaniment', type: 'Veg' }] },
   },
 };
 

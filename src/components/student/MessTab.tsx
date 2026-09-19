@@ -13,7 +13,7 @@ import {
   Coffee,
   Check,
 } from 'lucide-react';
-import { MESS_MENU_DATA, WEEKLY_MEAL_PLAN } from './studentData';
+import { MESS_MENU_DATA, WEEKLY_MEAL_PLAN, WEEKLY_MESS_COURSES } from './studentData';
 
 export type MealSlot = 'Breakfast' | 'Lunch' | 'Snacks' | 'Dinner';
 
@@ -161,7 +161,7 @@ export const MessTab: React.FC<MessTabProps> = ({ darkMode }) => {
     }, 4000);
   };
 
-  const currentMealData = MESS_MENU_DATA[activeMeal];
+  const currentMealData = WEEKLY_MESS_COURSES[activeDay][activeMeal];
   const filteredDishes = currentMealData.dishes.filter((dish) => {
     if (dietFilter === 'All') return true;
     return dish.type === dietFilter;
