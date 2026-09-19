@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        // Suppress unhandled errors if an external/iframe script attempts to set window.fetch
+        window.addEventListener('error', function(event) {
+          if (event && event.message && event.message.indexOf('fetch') !== -1 && event.message.indexOf('getter') !== -1) {
+            if (typeof event.preventDefault === 'function') event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        // Ensure window.fetch is configurable and has a setter so polyfills/proxies do not throw
+        try {
+          var originalFetch = typeof window !== 'undefined' ? window.fetch : undefined;
+          var currentFetch = originalFetch;
+
+          function setupSettableFetch(target) {
+            if (!target) return;
+            try {
+              var desc = Object.getOwnPropertyDescriptor(target, 'fetch');
+              if (!desc || desc.configurable) {
+                Object.defineProperty(target, 'fetch', {
+                  configurable: true,
+                  enumerable: true,
+                  get: function() {
+                    return currentFetch;
+                  },
+                  set: function(fn) {
+                    currentFetch = fn;
+                  }
+                });
+              }
+            } catch (err) {}
+          }
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            setupSettableFetch(Window.prototype);
+          }
+          if (typeof window !== 'undefined') {
+            var proto = Object.getPrototypeOf(window);
+            while (proto && proto !== Object.prototype) {
+              setupSettableFetch(proto);
+              proto = Object.getPrototypeOf(proto);
+            }
+            setupSettableFetch(window);
+          }
+          if (typeof globalThis !== 'undefined' && globalThis !== window) {
+            setupSettableFetch(globalThis);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realm of Hostels - Student Command Portal & Campus Living Console</title>
+    <meta name="description" content="Campus living administration console, room inventory matrix, and tactical student command portal for modern university housing." />
+    <meta property="og:title" content="Realm of Hostels - Student Command Portal & Campus Living Console" />
+    <meta property="og:description" content="Campus living administration console, room inventory matrix, and tactical student command portal for modern university housing." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0c0b0a] text-[#ede9e3] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
