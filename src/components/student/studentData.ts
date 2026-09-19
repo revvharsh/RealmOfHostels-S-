@@ -15,8 +15,8 @@ export const DEFAULT_USER_PROFILE: UserProfile = {
   program: 'B.Tech',
   year: '1st Year',
   bloodGroup: 'O+',
-  homeCity: 'Patna, Bihar',
-  guardianName: 'Pritam Upadhyay',
+  homeCity: 'Bokaro, Jharkhand',
+  guardianName: 'XYZ',
   guardianPhone: '+91 94310 12345',
   guardianRelation: 'Father',
   enrollmentStatus: 'Active Resident',
@@ -32,7 +32,7 @@ export const CURRENT_STUDENT: Roommate = {
   phone: '+91 88099 00560',
   email: 'upadhyayharshpritam@gmail.com',
   bloodGroup: 'O+',
-  homeCity: 'Patna, Bihar',
+  homeCity: 'Bokaro, Jharkhand',
   isSelf: true,
 };
 
