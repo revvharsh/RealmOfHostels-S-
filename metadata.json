@@ -1,0 +1,7 @@
+{
+  "name": "Realm of Hostels",
+  "description": "Campus living administration console, room inventory matrix, and tactical student command portal for modern university housing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
