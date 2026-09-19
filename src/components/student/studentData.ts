@@ -240,13 +240,13 @@ export const MESS_MENU_DATA: Record<
 };
 
 export const WEEKLY_MEAL_PLAN = [
-  { day: 'Monday', vegSpecial: 'Paneer Makhani & Dal Tadka', nonVegSpecial: 'Egg Curry (Lunch) & Chicken Korma (Dinner)' },
-  { day: 'Tuesday', vegSpecial: 'Kadhai Paneer & Chana Masala', nonVegSpecial: 'Egg Bhurji (Dinner)' },
-  { day: 'Wednesday', vegSpecial: 'Shahi Paneer & Rajma Masala', nonVegSpecial: 'Butter Chicken (Lunch & Dinner)' },
-  { day: 'Thursday', vegSpecial: 'Matar Paneer & Yellow Dal Fry', nonVegSpecial: 'Egg Curry (Lunch)' },
-  { day: 'Friday', vegSpecial: 'Palak Paneer & Dal Makhani', nonVegSpecial: 'Chicken Biryani (Dinner Special)' },
-  { day: 'Saturday', vegSpecial: 'Malai Kofta & Mix Veg Korma', nonVegSpecial: 'Egg Masala & Chicken Tikka' },
-  { day: 'Sunday', vegSpecial: 'Special Paneer Lababdar & Chole Bhature', nonVegSpecial: 'Homestyle Chicken Curry & Mutton Stew' },
+  { day: 'Monday', vegSpecial: 'Aloo Puri, Arhar Dal, Parwal Do Pyaza, Samosa', nonVegSpecial: 'Chana Dal, Aloo Gobhi, Kofta' },
+  { day: 'Tuesday', vegSpecial: 'Sambar Upma, Rajma, Aloo Matar, Poha/Macaroni', nonVegSpecial: 'Puri Chola, Kaddu Ki Sabji' },
+  { day: 'Wednesday', vegSpecial: 'Aloo Paratha, Kadai Paneer, Aloo Bread Sandwich', nonVegSpecial: 'Egg Curry/Malai Kofta' },
+  { day: 'Thursday', vegSpecial: 'Bread Butter Jam, Mix Vegetable Sabzi, Chow Mein', nonVegSpecial: 'Dal Makhani, Patta Gobhi Aloo' },
+  { day: 'Friday', vegSpecial: 'Pav Bhaji, Mix Vegetable Sabzi, Aloo Tikki Burger', nonVegSpecial: 'Chilli Paneer, Veg Manchurian, Fried Rice' },
+  { day: 'Saturday', vegSpecial: 'Kala Chana, Vegetable Biryani, Dahi Bhalla', nonVegSpecial: 'Dal, Rice, Roti, Chana, Custard' },
+  { day: 'Sunday', vegSpecial: 'Paneer Paratha, Chole Bhature, Aloo Patties', nonVegSpecial: 'Chicken Curry, Paneer Do Pyaza' },
 ];
 
 export const ANNOUNCEMENTS_LIST = [
