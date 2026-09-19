@@ -457,7 +457,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
                   className={`w-full min-h-[42px] px-3 py-2 rounded-xl border focus:outline-hidden focus:ring-1 focus:ring-[#8C5828] ${
                     darkMode ? 'bg-[#181613] border-[#2B2720] text-white' : 'bg-white border-[#DCD6CA] text-[#1C1917]'
                   }`}
-                  placeholder="Patna, Bihar"
+                  placeholder="Bokaro, Jharkhand"
                 />
               </div>
 
@@ -473,7 +473,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
                   className={`w-full min-h-[42px] px-3 py-2 rounded-xl border focus:outline-hidden focus:ring-1 focus:ring-[#8C5828] ${
                     darkMode ? 'bg-[#181613] border-[#2B2720] text-white' : 'bg-white border-[#DCD6CA] text-[#1C1917]'
                   }`}
-                  placeholder="Pritam Upadhyay"
+                  placeholder="XYZ"
                 />
               </div>
 
