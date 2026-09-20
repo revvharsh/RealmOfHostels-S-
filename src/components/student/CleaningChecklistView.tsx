@@ -37,7 +37,7 @@ const INITIAL_TASKS: RoomCleaningTask[] = [
     label: 'Trash & Waste Bins Emptied',
     category: 'Sanitation',
     isCompleted: true,
-    completedBy: 'Rohan Verma',
+    completedBy: 'Amar',
     completedAt: '10:15 AM',
   },
   {
@@ -59,7 +59,7 @@ const INITIAL_TASKS: RoomCleaningTask[] = [
     label: 'Beds Straightened & Linen Check',
     category: 'Linens & Bed',
     isCompleted: true,
-    completedBy: 'Aman Sharma',
+    completedBy: 'Aksh',
     completedAt: '08:45 AM',
   },
   {
@@ -316,7 +316,7 @@ export const CleaningChecklistView: React.FC<CleaningChecklistViewProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5 overflow-x-auto">
-            {['Harsh', 'Rohan Verma', 'Aman Sharma'].map((name) => (
+            {['Harsh', 'Amar', 'Aksh'].map((name) => (
               <button
                 key={name}
                 onClick={() => setActiveRoommateSim(name)}

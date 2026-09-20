@@ -86,7 +86,7 @@ export const CalendarWidget: React.FC<CalendarWidgetProps> = ({ darkMode }) => {
     try {
       const saved = localStorage.getItem('roh_student_calendar_notes');
       return saved ? JSON.parse(saved) : {
-        '2026-9-14': ['Room B-004 cleaning check at 10:15 AM', 'Study session with Aman & Rohan'],
+        '2026-9-14': ['Room B-004 cleaning check at 10:15 AM', 'Study session with Aksh & Amar'],
         '2026-9-15': ['Hostel fee installment reminder'],
       };
     } catch {

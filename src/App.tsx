@@ -21,7 +21,12 @@ export default function App() {
   const [userProfile, setUserProfile] = useState<UserProfile>(() => {
     try {
       const saved = localStorage.getItem('realm_user_profile');
-      return saved ? JSON.parse(saved) : DEFAULT_USER_PROFILE;
+      if (!saved) return DEFAULT_USER_PROFILE;
+
+      const parsed = JSON.parse(saved) as UserProfile;
+      return parsed.guardianName === 'Pritam Upadhyay'
+        ? { ...parsed, guardianName: 'xyz', guardianRelation: 'Brother' }
+        : parsed;
     } catch {
       return DEFAULT_USER_PROFILE;
     }

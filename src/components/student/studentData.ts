@@ -16,9 +16,9 @@ export const DEFAULT_USER_PROFILE: UserProfile = {
   year: '1st Year',
   bloodGroup: 'O+',
   homeCity: 'Patna, Bihar',
-  guardianName: 'Pritam Upadhyay',
+  guardianName: 'xyz',
   guardianPhone: '+91 94310 12345',
-  guardianRelation: 'Father',
+  guardianRelation: 'Brother',
   enrollmentStatus: 'Active Resident',
 };
 
@@ -39,11 +39,11 @@ export const CURRENT_STUDENT: Roommate = {
 export const ROOMMATES_B004: Roommate[] = [
   {
     id: 'RES-AMAN-001',
-    name: 'Aman Sharma',
+    name: 'Aksh',
     bed: 'Bed A (Window Side)',
     department: '',
     college: 'IILM University',
-    year: '1st Year',
+    year: '2nd Year',
     phone: '+91 98765 43210',
     email: 'aman.sharma26@iilm.edu',
     bloodGroup: 'B+',
@@ -52,11 +52,11 @@ export const ROOMMATES_B004: Roommate[] = [
   },
   {
     id: 'RES-ROHAN-002',
-    name: 'Rohan Verma',
+    name: 'Amar',
     bed: 'Bed B (Center Bed)',
     department: '',
     college: 'IILM University',
-    year: '1st Year',
+    year: '2nd Year',
     phone: '+91 91234 56789',
     email: 'rohan.verma26@iilm.edu',
     bloodGroup: 'A+',
