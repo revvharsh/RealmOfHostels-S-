@@ -89,8 +89,8 @@ export default function App() {
 
   const handleSignIn = (username: string, password: string): boolean => {
     const normalizedUsername = username.trim().toLowerCase();
-    const isAdmin = normalizedUsername === 'realmofhostels' && password === 'codersrealm';
-    const isStudent = normalizedUsername.includes('@') && password === 'codersrealm';
+  const isAdmin = normalizedUsername === 'codersrealm' && password === 'realmofhostels';
+  const isStudent = normalizedUsername.includes('@') && password === 'codersrealm';
     const role = isAdmin ? 'admin' : isStudent ? 'student' : null;
 
     if (!role) {

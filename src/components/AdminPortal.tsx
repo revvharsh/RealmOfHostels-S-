@@ -45,7 +45,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
 }) => {
   // Navigation & theme
   const [currentView, setCurrentView] = useState<NavTab>('home');
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   // Core data states
   const [rooms, setRooms] = useState<Room[]>(INITIAL_ROOMS);
